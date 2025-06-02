@@ -29,6 +29,7 @@ export const createUser = async (req, res) => {
 export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
+        console.log(email, password);
 
         // 1. Find user by email
         const user = await users.findOne({ email });
@@ -46,6 +47,7 @@ export const loginUser = async (req, res) => {
         const payload = {
             id: user._id,
             email: user.email,
+            name: user.name
         };
 
         // 4. Sign the token
