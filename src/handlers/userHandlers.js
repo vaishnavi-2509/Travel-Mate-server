@@ -47,7 +47,8 @@ export const loginUser = async (req, res) => {
         const payload = {
             id: user._id,
             email: user.email,
-            name: user.name
+            name: user.name,
+            admin: user.admin
         };
 
         // 4. Sign the token
