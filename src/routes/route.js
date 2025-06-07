@@ -1,5 +1,6 @@
 import express from 'express';
 import usersRoute from './usersRoute.js';
+import tripRoute from './tripRoutes.js';
 const baseRoute = express.Router();
 
 baseRoute.get('/', (req, res) => {
@@ -10,5 +11,6 @@ baseRoute.get('/', (req, res) => {
 });
 
 baseRoute.use('/users',usersRoute);
+baseRoute.use('/trips',tripRoute);
 
 export default baseRoute;

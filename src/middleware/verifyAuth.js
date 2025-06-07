@@ -17,3 +17,10 @@ export const verifyToken = (req, res, next) => {
         res.status(401).json({ error: "Invalid or expired token" });
     }
 };
+
+export const verifyAdmin = (req, res, next) => {
+    if (req.user.admin !== true) {
+        return res.status(401).json({ error: "Unauthorized" });
+    }
+    next();
+};
