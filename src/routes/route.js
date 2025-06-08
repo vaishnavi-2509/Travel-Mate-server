@@ -10,7 +10,11 @@ baseRoute.get('/', (req, res) => {
     });
 });
 
+// for cloudinary
+baseRoute.get('/cloudinary',uploadImage);
+
 baseRoute.use('/users',usersRoute);
 baseRoute.use('/trips',tripRoute);
+
 
 export default baseRoute;
